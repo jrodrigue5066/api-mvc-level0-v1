@@ -13,7 +13,7 @@ final class HealthCheckController extends AbstractController
     #[Route('/api/health', name: 'api_health_check', methods: ['GET'])]
     public function check(): JsonResponse
     {
-        return $this->json([
+        return new JsonResponse([
             'status' => 'ok',
             'timestamp' => (new \DateTime())->format('Y-m-d H:i:s'),
             'service' => 'Symfony API',
